@@ -12,27 +12,32 @@
 
 from random import *
  
-def userSelection():
+def userSelection():  # Fonction de sélection user
     
-    player = input("Rock\nPaper\nCisors\n") # Le joueur sélectionne l'item qu'il veut jouer (Pierre, feuille ou ciseaux)
+    player = input("Select your item :\nRock\nPaper\nCisors\n") # Le joueur sélectionne l'item qu'il veut jouer (Rock, Paper ou Cisors)
     while player not in ["Rock","Paper","Cisors"]:
-        player = input("Rock\nPaper\nCisors\n")
-    return(player) # Renvoie la sélection du joueur
+        player = input("Select your item :\nRock\nPaper\nCisors\n") # Tant que le joueur n'entre pas correctement le nom de l'item, redemander l'item
+    return(player)
  
-def botSelection(): # Choix aléatoire de l'ordinateur
+ 
+def botSelection():
+ # Choix aléatoire de l'ordinateur
     
-    n = randint(1,3) # Choix aléatoire entre pierre (1), feuille (2) ou ciseaux (3)
+    n = randint(1,3)
+ # Choix aléatoire entre pierre (1), feuille (2) ou ciseaux (3)
     if n == 1:
-        bot = "Rock"
+        bot = "Rock" # Item Rock
     elif n==2:
-        bot = "Paper"
+        bot = "Paper" # Item Paper
     else:
-        bot = "Cisors"
-    return(bot) # Renvoie la sélection aléatoire du bot
+        bot = "Cisors" # Item Cisors
+    return(bot)
+ 
  
 a = userSelection()
 b = botSelection()
-print(b) # Affiche la sélection du bot
+print(b)
+ # Affiche la sélection du bot
 
 
 # Partie détermination du vainqueur
